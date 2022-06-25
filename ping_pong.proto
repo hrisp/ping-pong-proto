@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+option go_package = "github.com/doitintl/pingpong";
+
+
+package PingPong;
+
+message Ball {
+    int32 size = 1;
+}
+
+service PingPong {
+    rpc SendBall(Ball) returns (google.protobuf.Empty) {}
+}
